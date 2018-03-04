@@ -1,0 +1,187 @@
+An Introduction to Go 
+Meet your next programming language
+7 Mar 2018
+Tags: golang, introduction, gopher
+
+Paul Stuart
+Senior Golang Engineer, Fastswitch
+pauleyphonic@gmail.com
+
+# how Golang came to be, 
+# who created it, 
+# why everyone likes it, 
+# what it can do, 
+# what it's not good for 
+# and then maybe some coding examples to go over.
+
+* What is Go?
+
+“Go is a compiled, concurrent, garbage-collected, statically typed language developed at Google. It is an open source project: Google imports the public repository rather than the other way around.
+
+Go is efficient, scalable, and productive. Some programmers find it fun to work in; others find it unimaginative, even boring.”
+
+-- Rob Pike, co-creator of Go
+
+* What's in a name?
+
+The name "Go" was a playful pun on the sponsor's name.
+
+*Written* references to the languange often use "Golang" because "Go" is ironically rather hard to Google.
+
+* What's all the excitement about?
+
+Lot's of shiny new projects are built with Go:
+
+- Docker
+- Kubernetes (Docker orchestration)
+- Consul, etcd (distributed key/value stores)
+- InfluxDB, Prometheus (timeseries databases / monitoring)
+
+Go is becoming the de facto language for modern cloud services.
+
+* Origins 
+
+.image peterparker.jpg
+
+* Origins of Go
+
+Google has tens of thousands of engineers working on many large projects, and that scale requires being able to maintain large codebases with large teams.
+
+The creators of Go came from Bell Labs (the originator of Unix), and that "Unix-y" background, as well as Google's needs, informs the language.
+
+It was born out of frustrations with systems programming tools of the time, forcing one to choose between:
+
+- efficient compilation
+- efficient execution
+- ease of programming
+
+It can be considered a decendant of C/C++.
+
+I like to describe it as the love-child of C and Python.
+
+* Go is opinionated
+“There's more than one way to do it”
+-- Larry Wall, creator of Perl
+
+“Do it this way”
+-- Rob Pike, as interpreted by Gophers
+
+* The Tao of Go
+
+- Don't communicate by sharing memory, share memory by communicating.
+- Gofmt's style is no one's favorite, yet gofmt is everyone's favorite.
+- A little copying is better than a little dependency.
+- Clear is better than clever.
+- Errors are values.
+- Don't just check errors, handle them gracefully.
+- Documentation is for users.
+- Don't panic.
+
+More here: [[https://go-proverbs.github.io/][Go Proverbs]]
+
+* Release History
+
+It was publicly announced in 2009, with version 1.0 being release in 2012.
+
+Version 1.10 was just released last month.
+
+The team does major updates twice a year on a schedule (long distance agile?)
+
+* Why use Go?
+- Simple (a Java developer can _start_ writing code in a day)
+- Fast (runtime speeds equal to Java/C++)
+- Lightweight (typically *much* less memory than Java)
+- Simple deployment (statically linked binaries!)
+
+* Simple is good
+
+Keyword count in various computer languages (less is more!):
+
+- C#: 102
+- F#: 98
+- C++: 82
+- Java: 50
+- PHP: 49
+- Ruby 42
+- JavaScript: 46
+- Python 3.x: 33
+- C: 32
+- Python 2.7: 31
+- *Go:* *25*
+
+source: [[https://stackoverflow.com/questions/4980766/reserved-keywords-count-by-programming-language][Stackoverflow]]
+
+* Language features
+
+- Statically typed (compile time checking)
+- Concurency primatives built-in (goroutines, channels)
+- First-class functions
+- Garbage collection
+- Instead of objects and classes, Go has types and methods
+- Multiple return values
+- Duck typing (lazy is good)
+- An elegant method for exporting variables (Upper-case names are exported)
+
+* Other Benefits
+
+- Static binaries for simple deployment
+- Fast build time
+- Cross compilation (e.g., build on a Mac and deploy to linux)
+- A "batteries-included" standard library
+- Strong tooling support
+
+* What's in the box?
+
+Tooling for Go is rather comprensive. The Go distrbution includes:
+
+- Built-in testing framework
+- Built-in profiling (CPU, memory, etc)
+- Built-in pretty-printer for consistent formatting
+- Built-in code documentation features
+- Built-in race detector (absolutely vital for a concurrent language)
+
+
+* Interfaces
+
+Interfaces are named collections of method signatures.
+
+They are a key component of the power and flexibility of Go. 
+
+#Unlike Java, you don't declare a type is of an interface. 
+#Instead, if your type has the methods that interface requires then it can be used as 
+.code interface_1.go /START OMIT/,/END OMIT/
+
+* Interfaces, part 2
+#.play interface_1.go /START OMIT/,/END OMIT/
+.play interface_1.go /IN OMIT/,/OUT OMIT/
+
+* Interfaces, part 3
+.play interface_2.go /START OMIT/,/END OMIT/
+
+* Concurrency
+.play goroutines.go /START OMIT/,/END OMIT/
+
+* Complaints about Go
+
+The evergreen issues:
+
+- No generics
+- Package management is a work in progress
+- No native debugger
+
+Language snob whining:
+
+- No polymorphism
+- No operator overloading
+- It doesn't implement feature "X" of my favorite programming language 
+
+* Gotchas
+
+- Go's simplicity can lure you into thinking you have mastered it before you really have
+- Try not to reinvent the wheel (e.g., yet another http router)
+- Don't codify application structures too quickly, wait until after Version 1 of your efforts
+- It's not java, don't layout your code like it (millions of directories with single files)
+
+* Q & A
+
+Bueller? Bueller?
