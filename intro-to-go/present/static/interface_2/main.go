@@ -11,7 +11,7 @@ func Hi(f Friend) {
 }
 
 // START OMIT
-// using a string for customm type
+// using a string for custom type
 type good string
 
 // satisfy Friend interface
